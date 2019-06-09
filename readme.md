@@ -8,3 +8,5 @@ right hand through space to set the initial velocity of the newly created
 planet.
 
 Currently the planet motion is simulated using the Eulerian method.
+
+![Screenshot](screenshot.png?raw=true)
