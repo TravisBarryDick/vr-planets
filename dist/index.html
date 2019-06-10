@@ -5,31 +5,28 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <a-scene background="color: #222" renderer="foveationLevel: 3" stats>
+    <a-scene background="color: #222" renderer="foveationLevel:3">
 
-      <a-assets>
-        <img id="sky" src="starmap_8k.jpg"></img>
-        <img id="sun" src="8k_sun.jpg"></img>
-        <img id="earth" src="2k_earth_daymap.jpg"></img>
+      <a-assets timeout="60000">
+        <img id="sky" src="starmap_8k.jpg">
+        <img id="sun" src="8k_sun.jpg">
+        <img id="earth" src="2k_earth_daymap.jpg">
       </a-assets>
 
       <a-sky src="#sky" segments-height="8" segments-width="8"> </a-sky>
       <a-light type="ambient" intensity="0.4"> </a-light>
-      <a-entity physical-environment="time_warp: 1" id="env">
-        <a-planet position="0 1 -5" mass="100" material="shader: flat; src:#sun">
+      <a-entity physical-environment   id="env">
+        <a-planet position="0 1 -10" mass="100" material="shader: flat; src:#sun">
           <a-light type="point"> </a-light>
         </a-planet>
-        <a-planet position="5 1 -5" mass="1" vel="0 0 3" material="src:#earth"></a-planet>
+        <a-planet position="5 1 -10" mass="1" vel="0 0 4.7" material="src:#earth"></a-planet>
       </a-entity>
 
       <a-entity id="rig" movement-controls="fly: true" position="0 0 0">
-          <a-entity camera position="0 1.6 0"></a-entity>
+          <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"></a-entity>
           <a-entity oculus-touch-controls="hand:right; model:false;" hand-controls="right" planet-launcher="target: #env">
-            <a-entity position = "0 0.1 0" fps-counter></a-entity>
           </a-entity>
       </a-entity>
-
-      <!-- <a-entity ui-rotary position="0 -0.4 -0.4" rotation="70 0 0" timewarp-dial="target: #env"></a-entity> -->
 
     </a-scene>
   </body>
