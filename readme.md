@@ -8,8 +8,8 @@ right hand through space to set the initial velocity of the newly created
 planet. A live demo is available here:
 https://travisbarrydick.github.io/vr-planets/dist/. You can use WSAD and the
 mouse to move the camera, but you can only create new planets using the oculus
-touch controls.
+touch controls. Here's a short video captured on an Oculus Quest:
+https://streamable.com/zlz48.
 
 Currently the planet motion is simulated using the Eulerian method.
-
 ![Screenshot](screenshot.png?raw=true)
