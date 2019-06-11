@@ -526,17 +526,6 @@ eval("__webpack_require__(/*! ./a-grid */ \"./node_modules/aframe-extras/src/pri
 
 /***/ }),
 
-/***/ "./node_modules/aframe-fps-counter-component/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/aframe-fps-counter-component/index.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("AFRAME.registerComponent('fps-counter', {\n  schema: {\n    enabled: {default: true},\n    for90fps: {default: true}\n  },\n\n  init: function () {\n    if (!this.data.enabled) {\n      this.el.sceneEl.removeBehavior(this);\n      return;\n    }\n    this.el.setAttribute('text', {align: 'center', side: 'double'});\n    this.el.sceneEl.setAttribute('stats', '');\n  },\n\n  tick: function (t, dt) {\n    var color;\n    var fps;\n    var self = this;\n\n    if (!this.fpsDiv) {\n      this.fpsDiv = document.querySelector('.rs-counter-base:nth-child(2) .rs-counter-value');\n      return;\n    }\n\n    fps = parseFloat(this.fpsDiv.innerHTML, 10);\n    if (this.data.for90fps) {\n      if (fps < 85) { color = 'yellow'; }\n      if (fps < 80) { color = 'orange'; }\n      if (fps < 75) { color = 'red'; }\n    } else {\n      if (fps < 55) { color = 'yellow'; }\n      if (fps < 50) { color = 'orange'; }\n      if (fps < 45) { color = 'red'; }\n    }\n\n    if (color) {\n      this.el.setAttribute('text', 'color', color);\n      setTimeout(function () {\n        self.el.setAttribute('text', 'color', 'white');\n      }, 500);\n    }\n\n    this.el.setAttribute('text', 'value', fps.toFixed(0));\n  }\n});\n\n\n//# sourceURL=webpack:///./node_modules/aframe-fps-counter-component/index.js?");
-
-/***/ }),
-
 /***/ "./node_modules/aframe-ui-widgets/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/aframe-ui-widgets/index.js ***!
@@ -667,7 +656,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var aframe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aframe */ \"./node_modules/aframe/dist/aframe-master.js\");\n/* harmony import */ var aframe__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aframe__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var aframe_ui_widgets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! aframe-ui-widgets */ \"./node_modules/aframe-ui-widgets/index.js\");\n/* harmony import */ var aframe_ui_widgets__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(aframe_ui_widgets__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var aframe_fps_counter_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! aframe-fps-counter-component */ \"./node_modules/aframe-fps-counter-component/index.js\");\n/* harmony import */ var aframe_fps_counter_component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(aframe_fps_counter_component__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var aframe_extras__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aframe-extras */ \"./node_modules/aframe-extras/index.js\");\n/* harmony import */ var aframe_extras__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aframe_extras__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _physical_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./physical.js */ \"./src/physical.js\");\n/* harmony import */ var _planet_launcher_component_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./planet-launcher-component.js */ \"./src/planet-launcher-component.js\");\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var aframe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! aframe */ \"./node_modules/aframe/dist/aframe-master.js\");\n/* harmony import */ var aframe__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(aframe__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var aframe_ui_widgets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! aframe-ui-widgets */ \"./node_modules/aframe-ui-widgets/index.js\");\n/* harmony import */ var aframe_ui_widgets__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(aframe_ui_widgets__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var aframe_extras__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! aframe-extras */ \"./node_modules/aframe-extras/index.js\");\n/* harmony import */ var aframe_extras__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(aframe_extras__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _physical_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./physical.js */ \"./src/physical.js\");\n/* harmony import */ var _planet_launcher_component_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./planet-launcher-component.js */ \"./src/planet-launcher-component.js\");\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
