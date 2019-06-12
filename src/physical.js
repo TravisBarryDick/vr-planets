@@ -79,16 +79,16 @@ AFRAME.registerComponent('physical-environment', {
   }
 });
 
-////////////////////////////////
-// --- physical component --- //
-////////////////////////////////
+/////////////////////////////////////
+// --- physical-body component --- //
+/////////////////////////////////////
 
 // Represents a body in a physical-environment that is affected by gravity
 AFRAME.registerComponent('physical-body', {
   schema: {
     // The mass of this body
     mass: {type: 'number', default: 1},
-    // The initial velocity of this body. 
+    // The initial velocity of this body.
     'initial-vel': {type: 'vec3'},
   },
 
@@ -135,9 +135,9 @@ AFRAME.registerComponent('physical-body', {
   }
 });
 
-////////////////////////////////
-// --- a-planet primitive --- //
-////////////////////////////////
+//////////////////////////////
+// --- a-body primitive --- //
+//////////////////////////////
 
 var extendDeep = AFRAME.utils.extendDeep;
 var meshMixin = AFRAME.primitives.getMeshMixin();
