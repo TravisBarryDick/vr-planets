@@ -16,10 +16,10 @@
       <a-sky src="#sky" segments-height="8" segments-width="8"> </a-sky>
       <a-light type="ambient" intensity="0.4"> </a-light>
       <a-entity physical-environment   id="env">
-        <a-planet position="0 1 -10" mass="100" material="shader: flat; src:#sun">
+        <a-body position="0 1 -10" mass="100" material="shader: flat; src:#sun">
           <a-light type="point"> </a-light>
-        </a-planet>
-        <a-planet position="5 1 -10" mass="1" vel="0 0 4.7" material="src:#earth"></a-planet>
+        </a-body>
+        <a-body position="5 1 -10" mass="1" initial-vel="0 0 4.7" material="src:#earth"></a-body>
       </a-entity>
 
       <a-entity id="rig" movement-controls="fly: true" position="0 0 0">
