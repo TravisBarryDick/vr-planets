@@ -17,6 +17,9 @@ AFRAME.registerComponent('planet-launcher', {
     this.line = new THREE.Line(geometry, material);
     this.el.sceneEl.setObject3D('planet-launcher-line', this.line);
 
+    this.planetIndex = 0;
+    this.colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
     this.tmp = new THREE.Vector3();
 
     this.el.addEventListener('abuttondown', this.startLaunch.bind(this));
@@ -75,6 +78,8 @@ AFRAME.registerComponent('planet-launcher', {
     this.launching = false;
     this.line.visible = false;
     var newPlanet = document.createElement('a-body');
+    let planetColor = this.colors[this.planetIndex++ % this.colors.length];
+    newPlanet.setAttribute('material','color:' + planetColor);
     var pb = this.line.geometry.attributes.position.array;
     newPlanet.object3D.position.set(pb[0], pb[1], pb[2]);
     var vel = new THREE.Vector3(pb[3] - pb[0], pb[4] - pb[1], pb[5] - pb[2]);
