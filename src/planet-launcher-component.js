@@ -51,9 +51,9 @@ AFRAME.registerComponent('planet-launcher', {
     var newPlanet = document.createElement('a-body');
     let planetColor = this.colors[this.planetIndex++ % this.colors.length];
     newPlanet.setAttribute('material','color:' + planetColor);
-    this.line.copyStart(newPlanet.object3D.position);
+    this.line.getStart(newPlanet.object3D.position);
     var vel = new THREE.Vector3();
-    this.line.copyEnd(vel);
+    this.line.getEnd(vel);
     vel.sub(newPlanet.object3D.position).multiplyScalar(5);
     newPlanet.setAttribute('physical-body', {mass: 0.1, 'initial-vel': vel});
     this.data.target.appendChild(newPlanet);

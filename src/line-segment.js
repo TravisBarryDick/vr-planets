@@ -42,7 +42,7 @@ LineSegment.prototype.setEnd = function(v) {
 },
 
 // Copies the starting point of the line segment into the vector v
-LineSegment.prototype.copyStart = function(v) {
+LineSegment.prototype.getStart = function(v) {
   var pb = this.line.geometry.attributes.position.array;
   v.x = pb[0];
   v.y = pb[1];
@@ -50,7 +50,7 @@ LineSegment.prototype.copyStart = function(v) {
 }
 
 // Copies the ending point of the line segment into the vector v
-LineSegment.prototype.copyEnd = function(v) {
+LineSegment.prototype.getEnd = function(v) {
   var pb = this.line.geometry.attributes.position.array;
   v.x = pb[3];
   v.y = pb[4];
