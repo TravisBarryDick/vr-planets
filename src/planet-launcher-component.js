@@ -48,15 +48,13 @@ AFRAME.registerComponent('planet-launcher', {
   endLaunch: function() {
     this.launching = false;
     this.line.setVisible(false);
-    var newPlanet = document.createElement('a-body');
     let planetColor = this.colors[this.planetIndex++ % this.colors.length];
-    newPlanet.setAttribute('material','color:' + planetColor);
-    this.line.getStart(newPlanet.object3D.position);
+    var pos = new THREE.Vector3();
+    this.line.getStart(pos);
     var vel = new THREE.Vector3();
     this.line.getEnd(vel);
-    vel.sub(newPlanet.object3D.position).multiplyScalar(5);
-    newPlanet.setAttribute('physical-body', {mass: 0.1, 'initial-vel': vel});
-    this.data.target.appendChild(newPlanet);
+    vel.sub(pos).multiplyScalar(5);
+    this.data.target.components['physical-environment'].createAndAppendBody(0.1, pos, vel, planetColor);
   }
 
 });
