@@ -12,7 +12,7 @@ export function LineSegment(color, width, start, end) {
 // Returns the THREE.Line instance
 LineSegment.prototype.getLine = function() {
   return this.line;
-}
+};
 
 // Updates the geometry of the LineSegment
 LineSegment.prototype.updateGeo = function() {
@@ -21,7 +21,7 @@ LineSegment.prototype.updateGeo = function() {
   // the camera's frustum. After updating the start or end points, we need to
   // update the bounding sphere to get proper culling.
   this.line.geometry.computeBoundingSphere();
-}
+};
 
 // Set the starting point of the LineSegment
 LineSegment.prototype.setStart = function(v) {
@@ -30,7 +30,7 @@ LineSegment.prototype.setStart = function(v) {
   pb[1] = v.y;
   pb[2] = v.z;
   this.updateGeo();
-},
+};
 
 // Set the ending point of the LineSegment
 LineSegment.prototype.setEnd = function(v) {
@@ -39,7 +39,7 @@ LineSegment.prototype.setEnd = function(v) {
   pb[4] = v.y;
   pb[5] = v.z;
   this.updateGeo();
-},
+};
 
 // Copies the starting point of the line segment into the vector v
 LineSegment.prototype.getStart = function(v) {
@@ -47,7 +47,7 @@ LineSegment.prototype.getStart = function(v) {
   v.x = pb[0];
   v.y = pb[1];
   v.z = pb[2];
-}
+};
 
 // Copies the ending point of the line segment into the vector v
 LineSegment.prototype.getEnd = function(v) {
@@ -55,9 +55,9 @@ LineSegment.prototype.getEnd = function(v) {
   v.x = pb[3];
   v.y = pb[4];
   v.z = pb[5];
-}
+};
 
 // Set the visibility property of the line
 LineSegment.prototype.setVisible = function(visible) {
   this.line.visible = visible;
-}
+};

@@ -25,10 +25,13 @@
       </a-entity>
 
       <a-entity id="rig" movement-controls="fly: true" position="0 0 0">
-          <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"></a-entity>
-          <a-entity oculus-touch-controls="hand:right; model:false;" hand-controls="right" planet-launcher="target: #env">
-          </a-entity>
+        <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true"></a-entity>
+        <a-entity hand-controls="left"  planet-launcher="target: #env; launcherLine:#launcher-line-left" ></a-entity>
+        <a-entity hand-controls="right" planet-launcher="target: #env; launcherLine:#launcher-line-right"></a-entity>
       </a-entity>
+
+      <a-entity id="launcher-line-left"></a-entity>
+      <a-entity id="launcher-line-right"></a-entity>
 
     </a-scene>
   </body>

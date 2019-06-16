@@ -1,4 +1,4 @@
-require('aframe')
+require('aframe');
 import { LineSegment } from './line-segment'
 
 // A component that enables oculus-touch-controls to launch 'planets' (i.e.,
@@ -6,7 +6,8 @@ import { LineSegment } from './line-segment'
 AFRAME.registerComponent('planet-launcher', {
   schema: {
     // The environment to launch planets in
-    target: {type: 'selector'}
+    target: {type: 'selector'},
+    launcherLine: {type: 'selector'},
   },
 
   init: function() {
@@ -16,16 +17,18 @@ AFRAME.registerComponent('planet-launcher', {
     this.colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
     this.line = new LineSegment(0x00ff00, 2);
-    this.el.sceneEl.setObject3D('planet-launcher-line', this.line.getLine());
+    this.data.launcherLine.setObject3D('planet-launcher-line', this.line.getLine());
 
     this.tmp = new THREE.Vector3();
 
     this.el.addEventListener('abuttondown', this.startLaunch.bind(this));
     this.el.addEventListener('abuttonup', this.endLaunch.bind(this));
+    this.el.addEventListener('xbuttondown', this.startLaunch.bind(this));
+    this.el.addEventListener('xbuttonup', this.endLaunch.bind(this));
   },
 
   remove: function() {
-    this.el.sceneEl.removeObject3D('planet-launcher-line');
+    this.data.launcherLine.removeObject3D('planet-launcher-line');
   },
 
   tick: function() {
